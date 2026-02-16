@@ -33,4 +33,5 @@ S3 Backend Environment:
   CORS Enabled: ${CORS_ENABLED}
   CORS Allow Private Network Access: ${CORS_ALLOW_PRIVATE_NETWORK_ACCESS}
   Proxy cache using stale setting: ${PROXY_CACHE_USE_STALE}
+  Return a 302 redirect to the S3 object URL instead of proxying the file through the gateyway: ${S3_REDIRECT_ENABLED}
 EOM
