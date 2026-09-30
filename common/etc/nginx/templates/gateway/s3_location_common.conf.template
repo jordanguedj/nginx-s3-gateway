@@ -44,7 +44,7 @@ set $append_slash_redirect_check "${APPEND_SLASH_FOR_POSSIBLE_DIRECTORY}:${S3_RE
 # Heuristic only: extensionless object paths are ambiguous and may be treated
 # as directories when slash-append and S3 redirect mode are both enabled.
 if ($append_slash_redirect_check ~ "^true:true:(?!.*\\/[^/]+\\.[^/]+$)\\/.+[^/]$") {
-    return 302 $real_scheme://$http_host$uri/$is_args$query_string;
+    return 302 $trailslash_redirect_uri/$is_args$query_string;
 }
 
 set $s3_redirect_enabled_env "${S3_REDIRECT_ENABLED}";
